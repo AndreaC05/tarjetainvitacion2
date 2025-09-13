@@ -10,9 +10,9 @@
 }
 
 .control-icon {
-    background-color: #FFE784;
+    background-color: #ff0000;
     border-radius: 50%;
-    color: #b38f00 !important;
+    color: white !important;
     width: 25px !important;
     height: 25px !important;
     padding: 0 !important;
@@ -24,10 +24,10 @@
 }
 
 .play-button {
-    background-color: #FFE784;
-    border: 2px solid #e0b401 !important;
+    background-color: #e90202;
+    border: 2px solid #000000 !important;
     border-radius: 50% !important;
-    color: #b38f00 !important;
+    color: white !important;
     width: 50px !important;
     height: 50px !important;
     display: flex !important;
@@ -52,12 +52,12 @@
 
 .play-button .pi {
     font-size: 25px;
-    margin-left: 6px;
+    /* margin-left: 6px; */
 }
 
 .play-button:hover {
-    background: #e0b401 !important;
-    border: 2px solid #FFE784 !important;
-    color: #FFE784 !important;
+    background: #000000 !important;
+    border: 2px solid #e90202 !important;
+    color: white !important;
     transform: scale(1.05) !important;
 }
