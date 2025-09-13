@@ -95,3 +95,34 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.calendario, .Hora {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendario h2, .Hora h2 {
+  font-family: "Kaushan Script", cursive; 
+  color: red;
+  font-size: 35px;
+}
+
+.calendario img {
+  width: 200px;
+  animation: inclinacion 1.5s infinite ease-in-out;
+}
+
+/* Animación de inclinación diagonal */
+@keyframes inclinacion {
+  0%   { transform: rotate(0deg) translate(0, 0); }
+  25%  { transform: rotate(3deg) translate(3px, 3px); }
+  50%  { transform: rotate(0deg) translate(0, 0); }
+  75%  { transform: rotate(-3deg) translate(-3px, -3px); }
+  100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+.Hora img {
+  width: 210px;
+}

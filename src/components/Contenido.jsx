@@ -1,13 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import "../style/Contenido.css";
 import Musica from "./Musica";
+import Calendario from "./Calendario";
+import Hora from "./Hora";
+import Linea from "../assets/linea.svg";
+import Linea2 from "../assets/Linea_dos.svg";
 
 export default function Contenido() {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [showSecondText, setShowSecondText] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  
-  const fullText = "¡Una nueva misión ha sido asignada! Los pilares te convocan para una celebración especial. Únete a esta aventura llena de música, amistad y mucha energía.";
+
+  const fullText =
+    "¡Una nueva misión ha sido asignada! Los pilares te convocan para una celebración especial. Únete a esta aventura llena de música, amistad y mucha energía.";
   const secondText = "¡No faltes!";
 
   useEffect(() => {
@@ -52,7 +57,7 @@ export default function Contenido() {
 
         <div className="texto_invitacion">
           <div className="parrafo">
-            <p className={`cursor ${showCursor ? 'blinking-cursor' : ''}`}>
+            <p className={`cursor ${showCursor ? "blinking-cursor" : ""}`}>
               {displayedText}
             </p>
           </div>
@@ -60,6 +65,16 @@ export default function Contenido() {
             <p className="typewriter delay fade-in">¡No faltes!</p>
           )}
         </div>
+        <section className="calendario mt-5">
+          <h2>Reserva este día</h2>
+          <img src={Linea} alt="" />
+          <Calendario />
+        </section>
+        <section className="Hora mb-5">
+          <h2>¡Tan solo faltan!</h2>
+          <img src={Linea2} alt="" />
+          <Hora />
+        </section>
       </div>
     </>
   );
