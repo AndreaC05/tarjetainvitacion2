@@ -1,0 +1,47 @@
+@media (max-width: 1440px) {
+  .cursor {
+    width: 250px;
+    font-size: 22px;
+    min-height: 120px; /* Para mantener el espacio mientras se escribe */
+  }
+
+  .calendario_headers,
+  .calendario_dias {
+    gap: 1px !important;
+  }
+
+  .header_dia {
+    font-size: 12px !important;
+  }
+
+  .numero_dia {
+    font-size: 16px !important;
+  }
+
+  .dia_tiempo span:nth-child(1),
+  .hora_tiempo span:nth-child(1),
+  .minutos_tiempo span:nth-child(1),
+  .segundos_tiempo span:nth-child(1) {
+    font-size: 34px !important;
+  }
+
+  .dia_tiempo span:nth-child(2),
+  .hora_tiempo span:nth-child(2),
+  .minutos_tiempo span:nth-child(2),
+  .segundos_tiempo span:nth-child(2) {
+    font-size: 16px !important;
+  }
+
+  .buton_direccion i,
+  .buton_whatsapp i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .buton_direccion Button,
+  .buton_whatsapp Button {
+    padding: 2px 15px;
+    font-size: 18px;
+  }
+}

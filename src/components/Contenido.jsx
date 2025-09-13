@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Button } from "primereact/button";
 import "../style/Contenido.css";
 import Musica from "./Musica";
 import Calendario from "./Calendario";
@@ -10,6 +11,12 @@ export default function Contenido() {
   const [displayedText, setDisplayedText] = useState("");
   const [showSecondText, setShowSecondText] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
+  const [textCompleted, setTextCompleted] = useState(false);
+  const [visibleSections, setVisibleSections] = useState({
+    calendario: false,
+    hora: false,
+    botones: false
+  });
 
   const fullText =
     "¡Una nueva misión ha sido asignada! Los pilares te convocan para una celebración especial. Únete a esta aventura llena de música, amistad y mucha energía.";
@@ -27,6 +34,11 @@ export default function Contenido() {
         setTimeout(() => {
           setShowCursor(false);
           setShowSecondText(true);
+          
+          // Después de mostrar el segundo texto, marcar como completado
+          setTimeout(() => {
+            setTextCompleted(true);
+          }, 1500); // Esperar 1.5 segundos después de mostrar "¡No faltes!"
         }, 1000);
       }
     };
@@ -36,6 +48,30 @@ export default function Contenido() {
 
     return () => clearTimeout(timer);
   }, [fullText]);
+
+  useEffect(() => {
+    if (textCompleted) {
+      // Mostrar secciones secuencialmente
+      const showSections = async () => {
+        // Mostrar calendario
+        setTimeout(() => {
+          setVisibleSections(prev => ({ ...prev, calendario: true }));
+        }, 500);
+
+        // Mostrar hora
+        setTimeout(() => {
+          setVisibleSections(prev => ({ ...prev, hora: true }));
+        }, 1500);
+
+        // Mostrar botones
+        setTimeout(() => {
+          setVisibleSections(prev => ({ ...prev, botones: true }));
+        }, 2500);
+      };
+
+      showSections();
+    }
+  }, [textCompleted]);
 
   return (
     <>
@@ -65,15 +101,32 @@ export default function Contenido() {
             <p className="typewriter delay fade-in">¡No faltes!</p>
           )}
         </div>
-        <section className="calendario mt-5">
+
+        <section className={`calendario mt-5 slide-up-section ${visibleSections.calendario ? 'visible' : ''}`}>
           <h2>Reserva este día</h2>
           <img src={Linea} alt="" />
           <Calendario />
         </section>
-        <section className="Hora mb-5">
+
+        <section className={`Hora mb-5 slide-up-section ${visibleSections.hora ? 'visible' : ''}`}>
           <h2>¡Tan solo faltan!</h2>
           <img src={Linea2} alt="" />
           <Hora />
+        </section>
+
+        <section className={`container_butons mt-5 slide-up-section ${visibleSections.botones ? 'visible' : ''}`}>
+          <div className="buton_direccion">
+            <i className="pi pi-map-marker"></i>
+            <a href="https://maps.app.goo.gl/8JVW2B5yPjbhDADKA">
+              <Button label="Ver Dirección" />
+            </a>
+          </div>
+          <div className="buton_whatsapp ml-5">
+            <i className="pi pi-whatsapp"></i>
+            <a href="https://wa.me/51950874416?text=Hola%20quiero%20confirmar%20mi%20asistencia%20a%20tu%20fiesta.">
+              <Button label="Confirmar" />
+            </a>
+          </div>
         </section>
       </div>
     </>

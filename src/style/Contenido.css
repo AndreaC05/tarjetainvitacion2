@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Smooch&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .container_texto_invitacion {
   display: flex;
@@ -22,7 +22,7 @@
 }
 
 .nombre {
-    position: absolute;
+  position: absolute;
 }
 
 .nombre h1 {
@@ -35,22 +35,18 @@
 }
 
 .nombre h1:nth-child(2) {
-  color: rgb(0, 0, 0); 
+  color: rgb(0, 0, 0);
   margin-top: -30px;
-  text-shadow: 
-    -1px -1px 0 red,
-    1px -1px 0 red,
-    -1px 1px 0 red,
-    1px 1px 0 red; 
+  text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
 }
 
 .texto_invitacion {
   margin-top: 20px;
 }
 
-.parrafo {
+/* .parrafo {
   width: 400px;
-}
+} */
 
 .texto_invitacion p {
   text-align: center;
@@ -76,14 +72,20 @@
 
 /* Cursor parpadeante */
 .blinking-cursor::after {
-  content: '|';
-  color: rgba(255,255,255,.75);
+  content: "|";
+  color: rgba(255, 255, 255, 0.75);
   animation: blinkingCursor 1s infinite;
 }
 
 @keyframes blinkingCursor {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Animación para el segundo texto */
@@ -92,19 +94,27 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.calendario, .Hora {
+.calendario,
+.Hora {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.calendario h2, .Hora h2 {
-  font-family: "Kaushan Script", cursive; 
+.calendario h2,
+.Hora h2 {
+  font-family: "Kaushan Script", cursive;
   color: red;
   font-size: 35px;
 }
@@ -116,13 +126,111 @@
 
 /* Animación de inclinación diagonal */
 @keyframes inclinacion {
-  0%   { transform: rotate(0deg) translate(0, 0); }
-  25%  { transform: rotate(3deg) translate(3px, 3px); }
-  50%  { transform: rotate(0deg) translate(0, 0); }
-  75%  { transform: rotate(-3deg) translate(-3px, -3px); }
-  100% { transform: rotate(0deg) translate(0, 0); }
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate(3px, 3px);
+  }
+  50% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  75% {
+    transform: rotate(-3deg) translate(-3px, -3px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
 }
 
 .Hora img {
   width: 210px;
+}
+
+.container_butons {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.buton_direccion,
+.buton_whatsapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buton_direccion i,
+.buton_whatsapp i {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: white;
+  animation: goldGlow 2s infinite alternate;
+}
+
+@keyframes goldGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.4), 0 0 10px rgba(255, 7, 7, 0.4),
+      0 0 20px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.9), 0 0 20px rgba(255, 7, 7, 0.8),
+      0 0 40px rgba(255, 0, 0, 0.7), 0 0 80px rgba(255, 0, 0, 0.6);
+  }
+}
+
+.buton_direccion Button,
+.buton_whatsapp Button {
+  background-color: rgba(255, 255, 255, 0.493);
+  color: red;
+  border: none;
+  padding: 5px 20px;
+  font-family: "Kaushan Script", cursive;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buton_direccion Button:hover,
+.buton_whatsapp Button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #ff0000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1),
+      0 0 60px rgba(255, 255, 255, 0.8), 0 0 90px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Animación de deslizamiento desde abajo */
+.slide-up-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 0s;
+}
+
+.slide-up-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
