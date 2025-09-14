@@ -1,8 +1,8 @@
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   .cursor {
     width: 250px;
     font-size: 22px;
-    min-height: 120px; /* Para mantener el espacio mientras se escribe */
+    min-height: 120px; 
   }
 
   .calendario_headers,
@@ -44,4 +44,4 @@
     padding: 2px 15px;
     font-size: 18px;
   }
-}
+} */
