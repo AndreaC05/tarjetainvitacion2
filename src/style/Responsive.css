@@ -1,21 +1,21 @@
-/* @media (max-width: 1440px) {
+@media (max-width: 1440px) {
   .cursor {
-    width: 250px;
-    font-size: 22px;
+    width: 300px;
+    font-size: 24px;
     min-height: 120px; 
   }
 
   .calendario_headers,
   .calendario_dias {
-    gap: 1px !important;
+    gap: 3px !important;
   }
 
   .header_dia {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 
   .numero_dia {
-    font-size: 16px !important;
+    font-size: 20px !important;
   }
 
   .dia_tiempo span:nth-child(1),
@@ -44,4 +44,4 @@
     padding: 2px 15px;
     font-size: 18px;
   }
-} */
+}
