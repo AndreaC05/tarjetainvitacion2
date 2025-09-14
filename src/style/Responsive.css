@@ -1,13 +1,13 @@
 @media (max-width: 1440px) {
   .cursor {
-    width: 300px;
-    font-size: 24px;
+    width: 320px;
+    font-size: 26px;
     min-height: 120px; 
   }
 
   .calendario_headers,
   .calendario_dias {
-    gap: 3px !important;
+    gap: 5px !important;
   }
 
   .header_dia {
@@ -15,21 +15,21 @@
   }
 
   .numero_dia {
-    font-size: 20px !important;
+    font-size: 26px !important;
   }
 
   .dia_tiempo span:nth-child(1),
   .hora_tiempo span:nth-child(1),
   .minutos_tiempo span:nth-child(1),
   .segundos_tiempo span:nth-child(1) {
-    font-size: 34px !important;
+    font-size: 38px !important;
   }
 
   .dia_tiempo span:nth-child(2),
   .hora_tiempo span:nth-child(2),
   .minutos_tiempo span:nth-child(2),
   .segundos_tiempo span:nth-child(2) {
-    font-size: 16px !important;
+    font-size: 20px !important;
   }
 
   .buton_direccion i,
@@ -41,7 +41,7 @@
 
   .buton_direccion Button,
   .buton_whatsapp Button {
-    padding: 2px 15px;
+    padding: 2px 18px;
     font-size: 18px;
   }
 }
